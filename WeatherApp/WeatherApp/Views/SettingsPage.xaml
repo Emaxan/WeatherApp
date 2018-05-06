@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:localization="clr-namespace:WeatherApp.Localization"
+             x:Class="WeatherApp.Views.SettingsPage"
+             Title="{Binding SettingsText, Source={x:Static localization:LocalizedStringProvider.Instance}}">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Label Text="{Binding FontColorText, Source={x:Static localization:LocalizedStringProvider.Instance}}"
+                       TextColor="{Binding SettingsInstance.CurrentFontColor}"
+                       FontSize="{Binding SettingsInstance.CurrentFontSize}"></Label>
+                <Picker x:Name="PickerFontColor"
+                        ItemsSource="{Binding SettingsInstance.NamedColors}" 
+                        SelectedItem="{Binding SettingsInstance.CurrentNamedFontColor}" 
+                        ItemDisplayBinding="{Binding Item2}"
+                        TextColor="{Binding SettingsInstance.CurrentFontColor}">
+                </Picker>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="{Binding AppLanguageText, Source={x:Static localization:LocalizedStringProvider.Instance}}"
+                       TextColor="{Binding SettingsInstance.CurrentFontColor}"
+                       FontSize="{Binding SettingsInstance.CurrentFontSize}"></Label>
+                <Picker ItemsSource="{Binding SettingsInstance.Locales}" 
+                        SelectedItem="{Binding SettingsInstance.CurrentLocale}" 
+                        ItemDisplayBinding="{Binding Name}"
+                        TextColor="{Binding SettingsInstance.CurrentFontColor}">
+                </Picker>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="{Binding FontSizeText, Source={x:Static localization:LocalizedStringProvider.Instance}}"
+                       TextColor="{Binding SettingsInstance.CurrentFontColor}"
+                       FontSize="{Binding SettingsInstance.CurrentFontSize}"></Label>
+                <Picker x:Name="PickerFontSize"
+                        ItemsSource="{Binding SettingsInstance.FontSizes}" 
+                        SelectedItem="{Binding SettingsInstance.CurrentFontSize}" 
+                        TextColor="{Binding SettingsInstance.CurrentFontColor}">
+                </Picker>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+    

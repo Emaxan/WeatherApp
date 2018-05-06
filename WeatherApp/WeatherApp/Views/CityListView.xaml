@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:WeatherApp.Views"
+             x:Class="WeatherApp.Views.CityListView">
+    <ContentView.Content>
+        <ListView x:Name="ListViewCities"
+              HasUnevenRows="True"
+              VerticalOptions="FillAndExpand"
+              IsPullToRefreshEnabled="True"
+              ItemsSource="{Binding Cities}"
+              RefreshCommand="{Binding LoadCitiesCommand}"
+              IsRefreshing="{Binding IsBusy, Mode = OneWay}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <views:CityViewCell/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentView.Content>
+</ContentView>

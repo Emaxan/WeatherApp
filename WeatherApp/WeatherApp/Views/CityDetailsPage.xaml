@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:settings="clr-namespace:WeatherApp.Helpers.AppSettings"
+             xmlns:localization="clr-namespace:WeatherApp.Localization"
+             xmlns:views="clr-namespace:WeatherApp.Views"
+             x:Class="WeatherApp.Views.CityDetailsPage"
+             Title="{Binding Name}">
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout Orientation="Vertical"
+                     VerticalOptions="FillAndExpand">
+                <views:CityDetailsView/>
+                <views:CitiesMapView
+                   x:Name="CityMap"
+                   HeightRequest="280"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

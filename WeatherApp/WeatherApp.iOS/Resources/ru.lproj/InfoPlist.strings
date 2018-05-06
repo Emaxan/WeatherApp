@@ -1,0 +1,3 @@
+﻿"CFBundleDisplayName" = "Погода";
+"NSLocationAlwaysUsageDescription" = "Мы можем использовать важе местонахождение";
+"NSLocationWhenInUseUsageDescription" = "Мы используем важе местонахождение";

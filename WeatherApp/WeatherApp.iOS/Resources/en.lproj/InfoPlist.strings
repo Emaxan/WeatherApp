@@ -1,0 +1,3 @@
+﻿"CFBundleDisplayName" = "Weather";
+"NSLocationAlwaysUsageDescription" = "Can we use your location";
+"NSLocationWhenInUseUsageDescription" = "We are using your location";

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          xmlns:controls="clr-namespace:WeatherApp.Controls"
+          xmlns:settings="clr-namespace:WeatherApp.Helpers.AppSettings"
+          xmlns:localization="clr-namespace:WeatherApp.Localization"
+          x:Class="WeatherApp.Views.CityViewCell">
+    <ViewCell.View>
+        <StackLayout BackgroundColor="White" Margin="10" Orientation="Horizontal">
+            <Image Source="{Binding SmallPhoto}" WidthRequest="80" HeightRequest="80"/>
+            <StackLayout Orientation="Vertical"
+                         VerticalOptions="FillAndExpand">
+                <Label Text="{Binding Name}"
+                       LineBreakMode="TailTruncation"
+                       TextColor="{Binding CurrentFontColor, Source={x:Static settings:Settings.Instance}}"
+                       FontSize="{Binding CurrentFontSize, Source={x:Static settings:Settings.Instance}}"/>
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding LongitudeText, Source={x:Static localization:LocalizedStringProvider.Instance}}"
+                               TextColor="{Binding CurrentFontColor, Source={x:Static settings:Settings.Instance}}"
+                               FontSize="{Binding CurrentFontSize, Source={x:Static settings:Settings.Instance}}"/>
+                        <Label Text="{Binding Longitude, Mode = OneWay}"
+                               TextColor="{Binding CurrentFontColor, Source={x:Static settings:Settings.Instance}}"
+                               FontSize="{Binding CurrentFontSize, Source={x:Static settings:Settings.Instance}}"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding LatitudeText, Source={x:Static localization:LocalizedStringProvider.Instance}}"
+                               TextColor="{Binding CurrentFontColor, Source={x:Static settings:Settings.Instance}}"
+                               FontSize="{Binding CurrentFontSize, Source={x:Static settings:Settings.Instance}}"/>
+                        <Label Text="{Binding Latitude, Mode = OneWay}"
+                               TextColor="{Binding CurrentFontColor, Source={x:Static settings:Settings.Instance}}"
+                               FontSize="{Binding CurrentFontSize, Source={x:Static settings:Settings.Instance}}"/>
+                    </StackLayout>
+                </StackLayout>
+                <Label Text="{Binding WeatherMain, Mode=OneWay}"
+                       TextColor="{Binding CurrentFontColor, Source={x:Static settings:Settings.Instance}}"
+                       FontSize="{Binding CurrentFontSize, Source={x:Static settings:Settings.Instance}}"/>
+                <controls:MultiLineLabel 
+                        Text="{Binding Description}"
+                        TextColor="{Binding CurrentFontColor, Source={x:Static settings:Settings.Instance}}"
+                        FontSize="{Binding CurrentFontSize, Source={x:Static settings:Settings.Instance}}"
+			            VerticalOptions="Center"
+			            LineBreakMode="TailTruncation"
+			            Lines="2"
+                        Margin="0, 20"/>
+            </StackLayout>
+        </StackLayout>
+    </ViewCell.View>
+</ViewCell>
